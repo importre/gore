@@ -1,0 +1,79 @@
+body {
+  min-width: 800px;
+}
+
+#body {
+  padding: 10px;
+}
+
+#foot {
+  margin-right: 10px;
+}
+
+pre {
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -pre-wrap; /* ancient Opera */
+  white-space: -o-pre-wrap; /* newer Opera */
+  white-space: pre-wrap; /* Chrome; W3C standard */
+  word-wrap: break-word; /* IE */
+}
+
+#find {
+  height: 60px;
+  width: 100%;
+}
+
+#input {
+  height: 375px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.field {
+  position: relative;
+  overflow: auto;
+  border: 1px solid #ccc;
+  background: #f1f1f1;
+}
+
+.field pre, .field textarea {
+  font: 100% "courier new", monospace;
+  width: 100%;
+  margin: 0; 
+  padding: 0;
+}
+
+.field pre {
+  z-index: 1;
+  color: #f1f1f1;
+}
+
+.field textarea {
+  z-index: 2;
+  margin-left: 0px;
+  border: 0;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+small {
+  float: right
+}
+
+a, a:visited {
+  color: #0196e3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+mark {
+  background: #fff000;
+  color: #fff000;
+}
