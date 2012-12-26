@@ -1,5 +1,11 @@
+* {
+  margin: 0; 
+  padding: 0;
+}
+
 body {
   min-width: 800px;
+  height: 100%;
 }
 
 #body {
@@ -21,12 +27,30 @@ pre {
 #find {
   height: 60px;
   width: 100%;
+  margin-bottom: 10px;
+}
+
+#code {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  background: #f1f1f1;
+  font-weight:normal;
+  font-style:normal;
+  text-decoration:none;
+  font: 100% "courier new", monospace;
+}
+
+#code b {
+  font-weight:normal;
+  font-style:normal;
+  text-decoration:none;
+  color: red;
 }
 
 #input {
-  height: 375px;
+  height: 300px;
   width: 100%;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .field {
@@ -37,10 +61,13 @@ pre {
 }
 
 .field pre, .field textarea {
-  font: 100% "courier new", monospace;
   width: 100%;
   margin: 0; 
   padding: 0;
+  font-weight:normal;
+  font-style:normal;
+  text-decoration:none;
+  font: 100% "courier new", monospace;
 }
 
 .field pre {
@@ -50,7 +77,6 @@ pre {
 
 .field textarea {
   z-index: 2;
-  margin-left: 0px;
   border: 0;
   background: transparent;
   position: absolute;
@@ -74,6 +100,10 @@ a:hover {
 }
 
 mark {
+  font-weight:normal;
+  font-style:normal;
+  text-decoration:none;
+  font: 100% "courier new", monospace;
   background: #fff000;
   color: #fff000;
 }

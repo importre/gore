@@ -2,22 +2,13 @@ var input = null;
 var input1 = null;
 var input1bg = null;
 var find1 = null;
-
-window.onload = function() {
-  input = document.getElementById("input");
-  input1 = document.getElementById("input1");
-  input1bg = document.getElementById("input1bg");
-  find1 = document.getElementById("find1");
-  find1.focus();
-  sample();
-}
+var code = null;
 
 //function trim(str) {
 //  return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
 //}
 
 function sample() {
-
   find1.value = "</?[^<>]+?>";
   input1.value = "<go>\n\t<pkg>fmt</pkg>\n\t<pkg>regexp</pkg>\n</go>";
   refresh();
@@ -36,6 +27,14 @@ $(document).ready(function() {
   $('#input1').keyup(function() {
     refresh();
   });
+
+  input = document.getElementById("input");
+  input1 = document.getElementById("input1");
+  input1bg = document.getElementById("input1bg");
+  find1 = document.getElementById("find1");
+  find1.focus();
+  code = document.getElementById("code");
+  sample();
 });
 
 function doRegex(text) {
@@ -52,6 +51,23 @@ function doRegex(text) {
                }
              }
   });
+  genCode(text);
+}
+
+function genCode(expr) {
+  expr = expr.replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/\"/g, "&quot;");
+  code.innerHTML =
+    "re, err := regexp.Compile(\"" +
+    "<b>" + expr + "</b>" +
+    "\")<br/><br/>" +
+    "if nil == err {<br/>" +
+    "&nbsp;&nbsp;res := re.FindAllString(input, -1)<br/>" +
+    "&nbsp;&nbsp;for _, data := range res {<br/>" +
+    "&nbsp;&nbsp;&nbsp;&nbsp;fmt.Println(data);<br/>" +
+    "&nbsp;&nbsp;}<br/>" +
+    "}";
 }
 
 function refresh() {
