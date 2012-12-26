@@ -10,7 +10,7 @@ var code = null;
 
 function sample() {
   find1.value = "</?[^<>]+?>";
-  input1.value = "<go>\n\t<pkg>fmt</pkg>\n\t<pkg>regexp</pkg>\n</go>";
+  input1.value = "<go>\n    <pkg>fmt</pkg>\n    <pkg>regexp</pkg>\n</go>";
   refresh();
 }
 
