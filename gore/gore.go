@@ -1,4 +1,4 @@
-package gore
+package main
 
 import (
 	"fmt"
@@ -34,13 +34,6 @@ func initTemplate() {
 	tmpl = template.New(tmplFile)
 	tmpl, _ = tmpl.ParseFiles(tmplFile)
 }
-
-/*
-func main() {
-	err := http.ListenAndServe(":8080", nil)
-	log.Println(err)
-}
-*/
 
 func rootHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl = template.New(tmplFile)
